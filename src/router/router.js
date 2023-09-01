@@ -14,14 +14,24 @@ const routes = [
     name: "category",
     component: Category,
 
-    children: [
-        {
-            path: "/:id",
-            name: "singleBlog",
-            component: SingleBlog,
-        },
-      ],
+    // children: [
+    //     {
+    //         path: "/:id",
+    //         name: "singleBlog",
+    //         component: SingleBlog,
+    //     },
+    //   ],
   },
+  {
+    path: "/blog/:id",
+    name: "singleBlog",
+    component: SingleBlog,
+  },
+//   {
+//     path: "/single-blog",
+//     name: "singleBlog",
+//     component: SingleBlog,
+//   },
 ];
 
 export default createRouter({

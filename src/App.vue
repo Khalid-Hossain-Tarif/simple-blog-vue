@@ -26,16 +26,12 @@ onMounted(() => {
         <li>
           <router-link active-class="active" class="text-sm font-medium text-black/90 hover:text-blue-600" to="/">হোম</router-link> 
         </li>
-        <li>
-          <router-link active-class="active" class="text-sm font-medium text-black/90 hover:text-blue-600" to="/single-blog">single</router-link> 
-        </li>
         <li v-for="category in categories" :key="category.id"> 
           <router-link active-class="active" class="text-sm font-medium text-black/90 hover:text-blue-600" :to="(`/category/${category.id}`)">{{ category.name }}</router-link> 
         </li>
       </ul>
     </nav>
   </div>
-
   <RouterView></RouterView>
 </template>
 
