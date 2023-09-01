@@ -1,7 +1,10 @@
 <script setup>
+import Category from './Category.vue';
 </script>
 
 <template>
-    <h1 class="text-3xl font-bold">Homepage</h1>
-    <RouterLink to="/blog">Blog</RouterLink>
+    <div class="">
+       
+        <Category />
+    </div>
 </template>
