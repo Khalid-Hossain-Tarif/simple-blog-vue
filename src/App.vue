@@ -16,7 +16,7 @@ onMounted(() => {
 </script>
 
 <template>
-  <div class="bg-gray-200 py-4">
+  <div class="bg-gray-200 py-4 sticky top-0 z-50">
     <nav class="container flex justify-between gap-2">
       <div>
         <RouterLink to="/" class="text-blue-600 font-bold text-xl">Blog.</RouterLink>
