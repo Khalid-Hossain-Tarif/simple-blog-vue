@@ -1,19 +1,21 @@
 <script setup>
-import { ref } from "vue";
+import {inject, ref} from "vue";
 import { useRoute } from 'vue-router';
 
+const isLoading = inject('isLoading');
 const singleBlog = ref({});
-
 const route = useRoute();
-const id = route.params.id;
 
-fetch(`https://basic-blog.teamrabbil.com/api/post-details/${id}`)
+isLoading.value = false
+fetch(`https://basic-blog.teamrabbil.com/api/post-details/${route.params.id}`)
     .then(response => response.json())
-    .then(data => singleBlog.value = data)
+    .then(data => {
+      singleBlog.value = data;
+      isLoading.value = false
+    })
     .catch(error => {
         console.log(error)
     });
-
 </script>
 
 <template>

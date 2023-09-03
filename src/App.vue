@@ -1,5 +1,10 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import {ref, onMounted, provide} from "vue";
+import Loader from "./components/Loader.vue";
+
+const isLoading = ref(false);
+
+provide('isLoading', isLoading);
 
 const categories = ref();
 
@@ -11,8 +16,6 @@ onMounted(() => {
       console.log(error)
     });
 });
-
-
 </script>
 
 <template>
@@ -32,6 +35,8 @@ onMounted(() => {
       </ul>
     </nav>
   </div>
+
+  <Loader />
   <RouterView></RouterView>
 </template>
 
